@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("./partials/headSeccionesInformacion.ejs") %>
+  <meta charset="UTF-8">
+  <title>Detalles del producto</title>
+</head>
+<body>
+    
+    <%- include("./partials/menu.ejs") %>
+
+
+    <div class="tituloProductos_menu_C">
+        <div class="tituloProductos_menu">
+            <p>Administrar productos</p>
+        </div>
+        <div class="lineaTitulo"></div>
+    </div>
+
+    <div class="tituloProductos_menu_C" style="max-width: 1200px;padding: 40px;">
+    <button id="actualizar-producto">Actualizar producto</button>
+    <button id="crear-producto">Crear producto</button>
+    </div>
+    
+    <div class="fondo_container_productos" style=>
+        <div class="container_productos">
+            <div id="productos" style="display: flex;
+            flex-wrap: wrap;
+            align-items: center;">
+            </div>
+        </div>
+    </div>
+    
+    
+    <%- include("./partials/marcasproductos.ejs") %>
+      
+
+  <%- include("./partials/footer.ejs") %>
+
+  <script src="./js/admin.js"></script>
+  <script src="./js/detalles.js"></script>
+  
+    
+</body>
+</html>

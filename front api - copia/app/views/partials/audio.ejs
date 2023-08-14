@@ -1,0 +1,51 @@
+<div class="tituloProductos_menu_C">
+    <div class="tituloProductos_menu">
+        <p>Audio</p>
+    </div>
+    <div class="lineaTitulo"></div>
+</div>
+
+<div class="fondo_container_productos" style="padding: 30px 0px 50px 0px ;">
+    <div class="container_productos" style="max-width: 1220px;">
+      <div style="display: flex;
+                  flex-wrap: wrap;
+                  align-items: center;">
+        <main>
+  
+          <% productos.forEach((elements) => {
+              if ([6, 12, 15, 19].includes(elements.ID)) { %>
+                <div class="producto" onclick="mostrarModal(this)">
+                  <img src="<%= elements.IMAGEN %>" alt="<%= elements.PRODUCTO %>">
+                  <h4><%= elements.PRODUCTO %></h4>
+                  <div class="precio">
+                    <p><%= elements.PRECIO.toLocaleString('es-CO', { currency: 'COP' }) %> COP</p>
+                  </div>
+                  <div class="descripcion" style="display: none;"><p><%= elements.DESCRIPCION %></p></div>
+                </div>
+              <% } %>
+          <% }) %>
+  
+          <section id="carrito">
+            <!-- Aquí se mostrará el contenido del carrito de compras -->
+          </section>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <!-- HTML del modal -->
+<div id="modalb" class="modal">
+  <div id="modal-contenido" class="modal-contenido">
+    <div class="modal-cerrar-nombre">
+      <h2 id="modal-nombre" class="modal-nombre"></h2>
+      <span class="modal-cerrar">&times;</span>
+    </div>
+    <div class="img-desc-img">
+      <img id="modal-imagen" class="modal-imagen" src="">
+      <p id="modal-descripcion" class="modal-descripcion"></p>
+    </div>
+    <p id="modal-precio" class="modal-precio"></p>
+    <button id="modal-agregar-carrito" class="modal-agregar-carrito" onclick="agregarAlCarrito()">Agregar al carrito</button>
+  </div>
+</div>
+

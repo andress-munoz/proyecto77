@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("./partials/headSeccionesInformacion.ejs") %>
+</head>
+<body>
+    
+    <%- include("./partials/menu.ejs") %>
+    <div class="imagen_portada">
+      <div class="capa_gradient"></div>
+      <div class="detalles_container_portada">
+          <div class="detalles_portada">
+              <h1>CONTACTANOS</h1>
+              <p>¡Nos encantaría saber de ti! Si tienes alguna pregunta, comentario o sugerencia, no dudes en contactarnos. Puedes comunicarte con nosotros a través del siguiente formulario o utilizando la información de contacto que se encuentra a continuación.</p>
+
+              
+          </div>
+      </div>
+    </div>
+
+
+  <main class="contactanos_form">
+      <div class="icono_contactanos"><i class='bx bxs-contact'></i></div>
+      <form method="post" action="" enctype="multipart/form-data">
+          <div>
+              <span>Tu nombre</span>
+              <input type="text" name="nombre" autocapitalize="words" autocomplete="off" />
+          </div>
+          <div>
+              <span>Tu apellido</span>
+              <input type="text" name="apellido" autocapitalize="words" autocomplete="off" />
+          </div>
+
+          <div>
+              <span>Tu email</span>
+              <input type="email" name="email" autocomplete="off" />
+          </div>
+          <div>
+              <span>Asunto del mensaje</span>
+              <select name="asunto">
+                  <option>Comentario</option>
+                  <option>Sugerencia</option>
+                  <option>Reclamo</option>
+              </select>
+          </div>
+          <div class='large'>
+              <span>Adjunta una foto (de ser necesario)</span>
+              <input type="file" name="foto" accept="image/*" />
+          </div>
+          <div class='large'>
+              <span>Mensaje</span>
+              <textarea name="mensaje" rows="6" cols="80">
+              </textarea>
+          </div>
+          <div class='large'>
+              <button class='button' type="submit">Enviar mensaje</button>
+          </div>
+      </form>
+  </main>
+
+  <%- include("./partials/footer.ejs") %>
+    
+</body>
+</html>

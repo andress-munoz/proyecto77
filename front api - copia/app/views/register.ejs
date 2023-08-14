@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" type="image/png" href="../images/eontech_icon.png"/>
+    <link rel="stylesheet" href="resources/css/style.css">
+	  <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <title>Register</title>
+</head>
+<body class="loginbody">
+
+
+  <div class="circle"></div>
+  <div class="card">
+      <div class="logo">
+          <i class='bx bx-user-plus'></i>
+      </div>
+    <div class="register-form">
+      <h2>Crear Cuenta Eontech</h2><br>
+		<form action="register" method="POST" class="form">
+            <input type="text" name="user" required tabindex="1" placeholder="Usuario" autofocus>            
+            <input type="text" name="name" required tabindex="2"  placeholder="Nombre Completo">            
+            <select id="rol" name="rol" class="select-css" tabindex="3" placeholder="Rol">
+                <option value="user" selected>Usuario</option>            
+            </select>
+			      <input type="password" name="pass" required tabindex="4" placeholder="Contraseña">
+               
+              <input style="background-color: #025fff; color: white;" type="submit" class="btn-login" value="Crear Cuenta">   
+        
+                         
+		</form>		
+    <footer>
+			¿Ya tienes cuenta?
+      <a href="/loginUser/login" class="btn-cancel">Iniciar Sesion</a><br><br>
+      <a href="/" class="btn-register">ir al inicio</a>
+		</footer>
+	</div>
+
+    		
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<% if (typeof alert != "undefined")  { %>
+ <script>
+ Swal.fire({
+   title:'<%= alertTitle %>',
+   text:'<%= alertMessage %>',
+   icon:'<%= alertIcon %>',
+   showConfirmButton: <%= showConfirmButton %>,
+   timer: <%= timer %>
+ }).then(()=>{
+   window.location='/<%= ruta %>'
+ })
+ </script>
+<% } %>
+ </div>
+</body>
+</html>

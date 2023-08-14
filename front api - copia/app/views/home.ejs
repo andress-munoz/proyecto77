@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>   
+<html lang="en">
+<head>
+    <%- include("./partials/head.ejs") %>
+    
+</head>
+<body>
+    
+
+    <%- include("./partials/menu.ejs")%>
+       
+    <div class="slide-contenedor">
+        <div class="miSlider desvanecido">
+            <a href="./tienda"><img src="../images/banner cyber monday morado.jpg" alt=""></a>
+        </div>
+        <div class="miSlider desvanecido">
+            <img src="../images/portada1.webp" alt="">
+        </div>
+        <div class="miSlider desvanecido">
+                <img src="../images/bannerinicio.jpg" alt="">
+        </div>
+        <div class="direcciones">
+            <a href="#" class="atras" onclick="avanzaSlide(-1)">&#10094;</a>
+            <a href="#" class="adelante" onclick="avanzaSlide(1)">&#10095;</a>
+        </div>
+        <div class="barras">
+            <span class="barra active" onclick="posicionSlide(1)"></span>
+            <span class="barra" onclick="posicionSlide(2)"></span>
+            <span class="barra" onclick="posicionSlide(3)"></span>
+        </div>
+    </div>
+
+    <%- include("./partials/barraproductos.ejs") %>
+
+    <div class="tituloProductos_menu_C">
+        <div class="tituloProductos_menu">
+            <p style="font-size: 20px; color: #747474;">Productos Destacados Eontech</p>
+        </div>
+        <div class="lineaTitulo"></div>
+    </div>
+
+    <div class="fondo_container_productos" style="padding: 20px 0px 20px 0px ; background: #f9f9f9;">
+        <div class="container_productos" style="background: #f9f9f9;">
+            <div style="width: 900px;">
+                
+            <% productos.forEach((elements) => {
+                if ([19, 8, 10,1, 7, 3].includes(elements.ID)) { %>
+                  <div class="producto" style="width: 200px; margin-right: 0; margin-bottom: 5px;" onclick="mostrarModal(this)">
+                    <img src="<%= elements.IMAGEN %>" alt="<%= elements.PRODUCTO %>">
+                    <h4><%= elements.PRODUCTO %></h4>
+                    <div class="precio">
+                      <p><%= elements.PRECIO.toLocaleString('es-CO', { currency: 'COP' }) %> COP</p>
+                    </div>
+                    <div class="descripcion" style="display: none;"><p><%= elements.DESCRIPCION %></p></div>
+                  </div>
+                  
+                <% } %>
+            <% }) %>
+            <section id="carrito">
+                <!-- Aquí se mostrará el contenido del carrito de compras -->
+              </section>
+        </div>
+
+            <div class="productoGrande" style=" width: 800px; height: 610px; position: relative; margin-left: 10px;">
+            <img src="..\images\imagenprueba1.jpg" alt="" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%; background-image: url('imagen.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;  display: block;">
+        </div>
+        </div>
+    </div>
+
+
+    
+
+
+    <div id="modalb" class="modal">
+        <div id="modal-contenido" class="modal-contenido">
+          <div class="modal-cerrar-nombre">
+            <h2 id="modal-nombre" class="modal-nombre"></h2>
+            <span class="modal-cerrar">&times;</span>
+          </div>
+          <div class="img-desc-img">
+            <img id="modal-imagen" class="modal-imagen" src="">
+            <p id="modal-descripcion" class="modal-descripcion"></p>
+          </div>
+          <p id="modal-precio" class="modal-precio"></p>
+          <button id="modal-agregar-carrito" class="modal-agregar-carrito" onclick="agregarAlCarrito()">Agregar al carrito</button>
+        </div>
+      </div>
+
+      
+
+
+    <div style="height: 30px; width: 100%;"></div>
+
+    
+        <div class="cover">
+        
+        <div class="container__cover">
+
+             <div class="container__info">
+                 <h1>TE OFRECEMOS</h1>
+                <H2>SOLUCIONES</H2>
+                <p>Bienvenido a nuestra tienda en línea de hardware. Ofrecemos una amplia selección de productos de alta calidad, desde componentes básicos hasta accesorios de gama alta. Con precios competitivos y envío rápido y seguro, estamos aquí para ayudarte a encontrar los mejores productos para crear la computadora de tus sueños. estamos comprometidos a brindar a nuestros clientes una experiencia de compra fácil, segura y satisfactoria al mismo tiempo que los ayudamos a encontrar los productos adecuados para sus necesidades y les brindamos asistencia experta en la construcción de sus computadoras. ¡Gracias por elegirnos como su proveedor de hardware!</p>
+             </div>
+            <div class="container__vector">
+                  <img src="../images/imghome1.png" alt="">
+            </div>  
+        </div>   
+    </div>
+
+    <div class="fondo_container_productos" style="padding: 30px 0px 50px 0px ;">
+        <div class="container_productos" style="max-width: 1220px;">
+          <div style="display: flex;
+                      flex-wrap: wrap;
+                      align-items: center;">
+            <main>
+      
+              <% productos.forEach((elements) => {
+                  if ([17, 2, 21, 20, 16].includes(elements.ID)) { %>
+                    <div class="producto" onclick="mostrarModal(this)">
+                      <img src="<%= elements.IMAGEN %>" alt="<%= elements.PRODUCTO %>">
+                      <h4><%= elements.PRODUCTO %></h4>
+                      <div class="precio">
+                        <p><%= elements.PRECIO.toLocaleString('es-CO', { currency: 'COP' }) %> COP</p>
+                      </div>
+                      <div class="descripcion" style="display: none;"><p><%= elements.DESCRIPCION %></p></div>
+                    </div>
+                  <% } %>
+              <% }) %>
+      
+              <section id="carrito">
+                <!-- Aquí se mostrará el contenido del carrito de compras -->
+              </section>
+            </main>
+          </div>
+        </div>
+      </div>
+
+    <div style="height: 30px; width: 100%;"></div>
+
+    <%- include("./partials/marcasproductos.ejs") %>
+    <div style="height: 40px; width: 100%;"></div>
+
+    <div style="display: flex;width: 100%;margin: 0 auto;max-width: 1200px;">
+        <div style="max-width: 1200px; display: flex; top: 10px; color: #afafaf;"><h1>Blog</h1></div>
+    </div>
+    <div class="inferior_productos">
+        <div class="containerBlogInicio" style="background-color: #f9f9f9; max-width: 1300px; border-radius: 15px;">
+            <section class="blogInicio">
+                <a href="/blog"><article class="blogInicioArticulo" style="width: 300px; margin-right: 5px;">
+                    <img src="..\images\blog2.webp" alt="Producto 2" style="height: 150px;">
+                    <p>Los mejores accesorios para mejorar tu experiencia de gaming</p>
+                </article></a>
+                <a href="/blog"><article class="blogInicioArticulo" style="width: 300px; margin-right: 5px;">
+                    <img src="..\images\blog3.webp" alt="Producto 2" style="height: 150px;">
+                    <p>Cómo construir tu propia PC de alta gama para juegos</p>
+                </article></a>
+                <a href="/blog"><article class="blogInicioArticulo" style="width: 300px; margin-right: 5px;">
+                    <img src="..\images\blog1.avif" alt="Producto 2" style="height: 150px;">
+                    <p>Los componentes de hardware más populares del año</p>
+                </article></a>
+                <a href="/blog"><article class="blogInicioArticulo" style="width: 300px; margin-right: 5px;">
+                    <img src="..\images\blog4.webp" alt="Producto 2" style="height: 150px;">
+                    <p>Cómo proteger tu PC de virus y malware con software antivirus de alta calidad</p>
+                </article></a>
+            </section>
+        </div>
+    </div>
+
+    <div style="height: 60px; width: 100%;"></div>
+
+    <div class="whatsapp">
+        <a href="https://wa.me/" target="_blank" class="whatsapp-button">
+            <i class="fa-brands fa-whatsapp" style="font-size: 20px; margin-right: 10px;"></i><p> ¿Necesitas asesoria? contactanos!</p>
+        </a>
+
+      </div>
+
+      
+
+
+    
+    <%- include("./partials/footer.ejs") %>
+    
+    <script src="../js/slider.js"></script>
+    
+    <script src="../js/inicio.js"></script>
+
+    <script src="../js/carrito.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    
+    
+</body>
+</html>

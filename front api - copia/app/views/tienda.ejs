@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <%- include("./partials/head.ejs") %>
+  
+<body class="hold-transition skin-blue sidebar-mini">
+<!-- Site wrapper -->
+<div class="wrapper">
+
+  <%- include("./partials/menu.ejs") %>
+
+  <%- include("./partials/barraproductos.ejs") %>
+
+  <!-- =============================================== -->
+
+  <!-- Left side column. contains the sidebar -->
+  <% if (menu == 1) { %>
+    <%- include("./partials/tiendap.ejs") %>
+  <% } if (menu == 2) { %>
+    <%- include("./partials/portatil.ejs") %>
+  <% } if (menu == 3) { %>
+    <%- include("./partials/pc.ejs") %>
+  <% } if (menu == 4) { %>
+    <%- include("./partials/audio.ejs") %>
+  <% } if (menu == 5) { %>
+    <%- include("./partials/teclado.ejs") %>
+  <% } if (menu == 6) { %>
+    <%- include("./partials/mouse.ejs") %>
+  <% } if (menu == 7) { %>
+    <%- include("./partials/antenas.ejs") %>
+  <% } if (menu == 8) { %>
+    <%- include("./partials/procesadores.ejs") %>
+  <% }%> 
+
+  <!-- =============================================== -->
+
+  <%- include("./partials/footer.ejs") %>
+
+  
+
+  <!-- Control Sidebar -->
+  
+</div>
+<!-- wrapper -->
+
+<!-- jQuery 3 -->
+
+</script>
+</body>
+</html>
